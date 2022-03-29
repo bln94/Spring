@@ -1,0 +1,29 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/util
+   		   http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="student" class="Student">
+        <property name="name" value="Brandon" />
+        <property name="id" value="194088" />
+        <property name="phone">
+            <list>
+                <ref bean="phone" />
+            </list>
+        </property>
+        <property name="address" ref="address"/>
+    </bean>
+
+    <bean id="phone" class="Phone">
+        <property name="mobile" value="2546612501" />
+    </bean>
+    <bean id="address" class="Address">
+        <property name="country" value="USA" />
+        <property name="state" value="Washington"" />
+        <property name="city" value="Seattle" />
+        <property name="zipCode" value="98105" />
+    </bean>
+</beans>
